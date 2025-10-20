@@ -1,0 +1,14 @@
+name: CI Test Workflow
+
+on: [push]  # means: run this whenever someone pushes code
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # GitHub provides a Linux machine to run the job
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4  # pulls your repo files into the runner
+
+      - name: Run a simple command
+        run: echo "Hello from GitHub Actions!"
